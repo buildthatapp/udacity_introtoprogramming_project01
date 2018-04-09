@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<!-- Created 2018-04-09 -->
+<!-- #TODO: Create a github page for nanodegree -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles/style.css">
+
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <link rel="Stylesheet" href="styles/tomorrow.css">
+
+  <title>Buildthatapp's Notes | Udacity Intro to Programming Nanodegree</title>
+</head>
+
+<body>
+  <!-- #TODO: Use HTML section tags http://blog.teamtreehouse.com/use-html5-sectioning-elements -->
+  <img id="logo" src="https://d3u3u7bjn61hwm.cloudfront.net//images/asset-logo-mark-e78b9.svg" alt="Udacity Logo">
+  <nav>
+    <!-- #TODO:0 Split notes between separate HTML documents -->
+    <!-- #TODO: Make link active when manually scrolling -->
+    <a href="#lesson1">Lesson 1</a>
+    <a href="#lesson2">Lesson 2</a>
+    <a href="#lesson3">Lesson 3</a>
+    <a href="#lesson4">Lesson 4</a>
+    <a href="#lesson5">Lesson 5</a>
+    <a href="#lesson6">Lesson 6</a>
+    <a href="#lesson7">Lesson 7</a>
+    <a href="#lesson8">Lesson 8</a>
+    <a href="#lesson9">Lesson 9</a>
+    <a href="stage3.html">Stage 3</a>
+  </nav>
+
+  <main>
+    <header>
+      <h1 id='title'>Intro to Programming Nanodegree</h1>
+      <div id="subtitle">My notes Notes<br>
+        <em>Ongoing</em></div>
+    </header>
+
+    <div id="lesson1" class="lesson">
+      <h2><strong>Lesson 1</strong>: The Basics</h2>
+      <div class="concept">
+        <h3>How the Web Works</h3>
+        <p>
+          The web is the group of computers communicating using <strong>HTTP</strong> requests for HTML documents between <strong>web browsers</strong> and <strong>servers</strong>.
+        </p>
+        [<a href="https://www.udacity.com/course/viewer#!/c-nd000/l-3873828673/e-48329854/m-48480496">Video</a>]
+      </div>
+
+      <div class="concept">
+        <h3>HTML</h3>
+        <p>
+          <strong>Hypertext Markup Language</strong> is most of what you see on the web. Text is <em>what you see</em> and markup is <em>how it looks</em>.
+        </p>
+        [<a href="https://www.udacity.com/course/viewer#!/c-nd000/l-3873828673/m-48724340">Video</a>]
+      </div>
+
+      <div class="concept">
+        <h3>Tags and Elements</h3>
+        <p>
+          HTML <strong>tags</strong> mark HTML <strong>elements</strong>.
+        </p>
+        [<a href="https://www.udacity.com/course/viewer#!/c-nd000/l-3873828673/m-48723444">Video</a>]
+      </div>
+
+      <div class="concept">
+        <h3>Stupid Computers</h3>
+        <p>
+          They interpret instructions literally. The smallest mistakes can break everything. A <em>precise sequence of steps</em> is required.
+        </p>
+      </div>
+
+      <div class="concept">
+        <h3>Inline vs Block Elements</h3>
+        <p>
+          <strong>Block</strong> elements have an invisible box around them, while <strong>inline</strong> elements can be anywhere.
+        </p>
+      </div>
+    </div>
+
+    <div id="lesson2" class="lesson">
+      <h2><strong>Lesson 2</strong>: Creating Structured Documents With HTML</h2>
+
+      <div class="concept">
+        <h3>HTML-CSS-DOM</h3>
+        <p>
+          HTML and CSS are both languages with syntax and rules. <strong>HTML</strong> defines the content of the page, while <strong>CSS</strong> defines the way it is styled. The <strong>DOM</strong> (Document Object Model) is the convention by which HTML and other markup languages are represented: a tree structure called the DOM tree.
+        </p>
+      </div>
+
+      <div class="concept">
+        <h3>Text Editors</h3>
+        <p>
+          Recommended text editors:
+        </p>
+        <ul>
+          <li>
+            Atom (recommended)
+            <ul>
+              <li>
+                <a href="https://atom.io/packages/script">script</a> - run code in atom
+              </li>
+              <li>
+                <a href="https://atom.io/packages/autoclose-html">
+                autoclose-html</a> - automatically close HTML tags
+              </li>
+              <li>
+                <a href="https://atom.io/packages/preview-plus">
+                  preview-plus</a> - preview code in atom
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://www.sublimetext.com">Sublime Text</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="lesson3" class="lesson">
+      <h2><strong>Lesson 3:</strong> Adding CSS Style and HTML Structure</h2>
+      <div class="concept">
+        <h3>CSS</h3>
+        <p>
+          <strong>Cascading Style Sheets</strong> follow the <em>Most Specific Rule Applied</em>: you go down selectors until you reach the most relevant one.
+        </p>
+        <p>
+          A <strong>selector</strong> referencing either an HTML <code>tag</code>, <code>.class</code>, or <code>#id</code>. Then define <strong>properties</strong> and <strong>values</strong> to the selector.
+        </p>
+        <p>
+          Reference the CSS stylesheet in the <code>&lt;head></code> of the HTML document.
+        </p>
+        <pre class="prettyprint lang-html">
+&lt;link rel="stylesheet" href="style.css"></pre>
+
+        <p>
+          [<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">CSS Documentation</a>,
+          <a href="https://css-tricks.com/how-css-selectors-work/">Good Resource</a>]
+        </p>
+      </div>
+
+      <div class ="concept">
+        <h3>Boxes</h3>
+        <p>
+          Everything on a webpage is a box. Breaking up sections of the page with <code>div</code> tags allows us to neatly <strong>boxify</strong> the page.
+        </p>
+        <p>
+          All boxes are made up of 4 components: the <code>margin</code>, <code>border</code>, <code>padding</code>, and <code>content</code>.
+        </p>
+        <p>To make handling boxes simpler:</p>
+        <ol>
+          <li>
+            Set sizes using percentages instead of pixels
+          </li>
+          <li>
+            Set the width of a box to include the <code>content</code>, <code>padding</code>, and <code>border</code>.
+            <pre class="prettyprint lang-css">
+* {
+box-sizing: border-box;
+}</pre>
+          </li>
+        </ol>
+      </div>
+
+      <div class="concept">
+        <h3>Layout</h3>
+        <p>
+          CSS has powerful tools to layout content. You can use <strong>flexbox</strong> by adding the rule <code>display: flex</code> to the CSS of the container. Flexbox makes it easy to put the container's children beside each other.
+        </p>
+        <div class="diagram">
+          <img src="https://css-tricks.com/wp-content/uploads/2011/08/flexbox.png" alt="Flex container diagram">
+          <p>
+            Components of a <code>flex</code> container.
+          </p>
+        </div>
+
+        <p>
+          [<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Guide to Flexbox</a>]
+        </p>
+      </div>
+
+      <div class="concept">
+        <h3>Code, Test, Refine</h3>
+        <ol>
+          <li>
+            Look for natural boxes.
+          </li>
+          <li>
+            Look for repeated styles and semantic elements
+          </li>
+          <li>
+            Write HTML
+          </li>
+          <li>
+            Apply styles (from BIGGEST to smallest)
+          </li>
+          <li>
+            Fix things
+          </li>
+        </ol>
+        <p>
+          Use developer tools to test your layout and style.
+          <code>Command + Alt + i</code> in Chrome on OSX.
+        </p>
+      </div>
+
+      <div class="concept">
+        <h3>Verifying HTML and CSS</h3>
+        <p>
+          <a href="http://validator.w3.org/#validate_by_input">
+          Verify HTML</a><br>
+          <a href="http://jigsaw.w3.org/css-validator/#validate_by_input">
+          Verify CSS</a>
+        </p>
+      </div>
+    </div>
+
+    <div id="lesson4" class="lesson">
+      <h2>Lesson 4: Intro to Serious Programming</h2>
+      <div class="concept">
+        <h3>The Command Line</h3>
+        <p>
+          The <strong>command line</strong> is a powerful way to access and control your computer. The most common <strong>CLI</strong> - command line interface - is the <strong>Unix shell</strong>. Windows users can use a similar interface by installing <a href="http://git-scm.com/downloads">git</a>.
+        </p>
+        <p>
+          This is as opposed to the <strong>GUI</strong>, the <i>graphical user interface</i> most of us are used to seeing.
+        </p>
+      </div>
+
+      <div class="concept">
+        <h3>Intro to Computer Science</h3>
+        <p>
+          We use a <strong>programming language</strong> to tell the computer what to do. <strong>Python</strong> is an example of a <strong>high-level language</strong> and <strong>interpreter</strong> that allows the programmer to write in a more human-friendly code to be translated to what the computer needs to execute.
+        </p>
+        <p>
+          We need programming languages because natural languages have <em>ambiguity</em> and <em>verbosity</em>.
+        </p>
+        [<a href="https://www.udacity.com/wiki/cs101/unit-1">
+          Notes from CS101 Unit 1</a>,
+        <a href="https://www.udacity.com/wiki/cs101/unit1-python-reference">
+          Python reference</a>]
+      </div>
+
+      <div class="concept">
+        <h3>Think Like a Programmer</h3>
+        <ul>
+          <li>
+            Procedural Thinking
+          </li>
+          <li>
+            Systems Thinking
+          </li>
+          <li>
+            Technological empathy
+          </li>
+          <li>
+            Abstract thinking
+          </li>
+          <li>
+            Debugging
+          </li>
+        </ul>
+        [<a href="https://www.udacity.com/course/viewer#!/c-nd000/l-3521029360/m-3503049573">
+        Notes</a>]
+      </div>
+
+      <div class="concept">
+        <h3>Grammar</h3>
+        <p>
+          We can use the <strong>Backus-Naur Form</strong>, invented by John Backus (Fortran), to describe the grammar of the language with simplicity and precision.
+        </p>
+        <pre>
+&lt;Non-terminal> -> Replacement
+
+Expression -> Expression Operator Expression
+Expression -> Number
+Operator -> +
+Operator -> *
+Number -> 0,1,...
+Expression -> (Expression)</pre>
+      </div>
+
+      <div class="concept">
+        <h3>Further Study</h3>
+        <ul>
+          <li>
+            <a href="https://www.udacity.com/course/cs101">
+            Intro to Computer Science</a>
+          </li>
+          <li>
+            <a href="https://www.udacity.com/course/cs262">
+            Programming Languages</a>
+          </li>
+          <li>
+            <a href="https://www.udacity.com/course/cs215">
+            Introduction to Algorithms</a>
+          </li>
+          <li>
+            <a href="https://www.udacity.com/course/cs313">
+            Intro to Theoretical Computer Science</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="lesson5"class="lesson">
+      <h2>Lesson 5: Basic Python</h2>
+      <div class="concept">
+        <h3>Variable &amp; Code Readability</h3>
+        <p>
+          Use <strong>variables</strong> to represent and describe values. It also allows us to store and reuse important values many times consistently.
+        </p>
+        <p>
+          To assign a value to a variable:
+        </p>
+        <pre class="prettyprint lang-python">
+name = expression</pre>
+      </div>
+
+      <div class="concept">
+        <h3>Strings</h3>
+        <p>
+          You can use <code>''</code>, <code>""</code>, or <code>''' '''</code> to define a <strong>string.</strong>
+        </p>
+        <span id="string-methods"><b>Methods</b></span>
+        <ul>
+          <li>
+            Concatenation: 'string' + 'string'
+          </li>
+          <li>
+            Indexing: 'string'[position]
+          </li>
+          <li>
+            Select substring: 'string'[start:end]
+          </li>
+          <li>
+            Find: 'string'.find('string', position)
+          </li>
+          <li>
+            Replace: 'string'.replace('old', 'new')
+          </li>
+          <li>
+            Split: 'string'.split() = ['string', 'string',...]
+          </li>
+          <li>
+            Convert: str(Expression) = 'string'
+          </li>
+          <li>
+            Looping:
+            <pre>
+for c in 'string':
+    Code
+            </pre>
+          </li>
+        </ul>
+      </div>
+      <p>
+        <a href="http://wiki.udacity.com/CS101%20Unit%202">
+        Unit 2 Notes</a>,
+        <a href="http://wiki.udacity.com/CS101%20Unit2%20Python%20Reference">
+        Python Reference 2</a>
+      </p>
+      <div class="concept">
+        <h3>Input -> Function -> Output</h3>
+        <p>
+          Also known as procedures or methods, <strong>functions</strong> allow us to wrap useful code and reuse it consistently. Functions map some input to some output. Procedures affect variables outside the function.
+        </p>
+        <pre>
+def function(input, argument, parameter):
+    expression
+    return output</pre>
+        <p>
+          Remember to always <code>return</code> at the end of a function.
+        </p>
+      </div>
+      <div class="concept">
+        <h3>Control Flow</h3>
+        <p>
+          We use <code>if</code> statements to control the flow of the program.
+        </p>
+        <pre class="prettyprint lang-python">
+if TestExpression:
+    Block
+elif TestExpression:
+    Block
+else:
+    Block</pre>
+
+        <p>
+          <strong>Boolean operators</strong> take two expressions and return <code>True</code> or <code>False</code>.
+        </p>
+        <pre>
+< > <= == != or and</pre>
+      </div>
+
+      <div class="concept">
+        <h3>Loops</h3>
+        <p>
+          <strong>Loops</strong> repeat some code until some expression is <code>False</code>.
+        </p>
+        <pre class="prettyprint lang-python">
+while TestExpression:
+    Block
+    if BreakTest:
+      break
+    Code
+
+for name in list: #iterates over list; range(r)
+    Block
+        </pre>
+      </div>
+    </div>
+
+    <div id="lesson6" class="lesson">
+      <h2>Lesson 6: More Python</h2>
+      <div class="concept">
+        <h3>Random</h3>
+        <p>
+          We can generate random number by importing
+        </p>
+        <pre class="prettyprint">
+from random import randint
+randint(start, end)</pre>
+      </div>
+
+      <div class="concept">
+        <h3>User Input</h3>
+        <pre class="prettyprint">
+x = raw_input('Username:') #python2
+x = input('Password:') #python3</pre>
+      </div>
+
+      <div class="concept">
+        <h3>main()</h3>
+        <pre>
+if __name__ == '__main__':
+    print "This only executes when %s is executed rather than imported" % __file__</pre>
+        <p>
+          Use this at the bottom of your program to execute as a script and run tests.
+        </p>
+      </div>
+
+      <div class="concept">
+        <h3>Assignment</h3>
+        <p>
+          When call a function with a parameter, a reference to the object is being passed in. For mutable types, modifying the object with <code>.append()</code> will modify the object outside the function, but using an assignment statement <code>=</code> will not. The exception to this is <code>+=</code>, it will also modify the referenced object.
+        </p>
+      </div>
+    </div>
+
+    <div id="lesson7" class="lesson">
+      <h2>Lesson 7: Data Structures</h2>
+      <p>
+        <a href="https://www.udacity.com/wiki/cs101/unit_3">
+        Notes for Unit 3</a>
+      </p>
+      <div class="concept">
+        <h3>Lists</h3>
+        <p>
+          <strong>Lists</strong> can be a sequence of anything, even other lists. Strings are just a list of <strong>characters</strong>. <a href="#string-methods">String methods</a> apply to lists as well.
+        </p>
+        <pre class="prettyprint">
+list = [['Hello'], 30419, ...]
+print list[0][0]
+#>>> 'Hello'</pre>
+        <p>
+          Lists are also <strong>mutable</strong>, meaning individual components can be changed without the reference changing (which is what happens to strings; a new object is created every time a change is made). <strong>Aliasing</strong> occurs when there are multiple references to the same object.
+        </p>
+        <pre class="prettyprint">
+p = [1, 2, 4, 8]
+q = p
+q[0] = 0
+p == q
+#>>> True</pre>
+        <p>
+          <b>List Operations:</b>
+        </p>
+        <ul>
+          <li>
+            <code>list.append(expression)</code> adds element to end of list.
+          </li>
+          <li>
+            <code>list + list</code> returns concatenated list as new object.
+          </li>
+          <li>
+            <code>len(list)</code> returns number of child elements.
+          </li>
+          <li>
+            <code>list.index(value)</code> returns index of first instance. Returns <code>error</code> if list doesn't contain value.
+          </li>
+          <li>
+            <code>value in list</code> returns <code>True</code> if list contains value. Returns <code>False</code> otherwise.
+          </li>
+          <li>
+            <code>value not in list</code>
+          </li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3>Dictionary</h3>
+        <p>
+          A <strong>dictionary</strong> is an unordered list that contains unique keys and their related values. This makes it easy to search for a specific key value rather than going through index positions.
+        </p>
+        <!-- #TODO: Maybe use this code format to show methods -->
+        <pre class="prettyprint">
+dict = {'index1': 1, 'index2': 10}
+dict['awesome'] = True
+del dict['index1']
+dict
+#>>> {'index2': 10, 'awesome': True}
+
+# print every key/value pair
+for key, val in dict.items():
+    print "%s key is associated with %s" % (key, val)
+
+# format using dictionary keys
+print """
+index2: {index2}
+awesome: {awesome}
+""".format(**dict)
+
+# safely get value that might not be there
+# Default value = None
+thing = dict.get('index1')
+# get value with a default value
+thing = dict.get('index1', "Not found")</pre>
+        <p>
+          <a href="https://plus.google.com/u/0/events/cciortcifbg5qttjrmg533f78c4?authkey=CMj07bft-ovZPg">Tic-Tac-To using dictionaries</a>,
+          <a href="http://learnpythonthehardway.org/book/ex39.html">
+          Dictionary Reference</a>
+        </p>
+      </div>
+    </div>
+
+    <div id="lesson8" class="lesson">
+      <h2>Lesson 8: Best Practices</h2>
+      <div class="concept">
+        <h3>Commenting</h3>
+        <ul>
+          <li>
+            Don't over comment. Use descriptive variable/function names.
+          </li>
+          <li>
+            Keep comments up-to-date.
+          </li>
+          <li>
+            Be concise.
+          </li>
+        </ul>
+      </div>
+      <div class="concept">
+        <h3>Documentation</h3>
+        <p>Python (but not all languages) allows you to use a <strong>docstring</strong> at the beginning of classes, functions, etc.</p>
+        <pre class="prettyprint">
+"""The docstring of a script shoudl be its 'usage' massage.
+
+Describe the scripts's function, command line syntax, environment variables,
+and files.
+
+These docstrings can be very elaborate and span several pages. It should
+allow a new user to understand how to use it.
+
+Separate a class's methods by a single blank line."""
+
+def somefunction(name):
+"""Do something and return x.
+
+The summary line needs to fit on one line, end with a period, and have a
+newline after it."""</pre>
+        <a href="https://docs.python.org/devguide/documenting.html">
+        Documenting Python</a>,
+        <a href="http://sphinxcontrib-napoleon.readthedocs.org/en/latest/example_google.html">
+        Docstring Example</a>,
+        <a href="https://www.python.org/dev/peps/pep-0257/">
+        Docstring Documentation</a>,
+        <a href="http://docutils.sourceforge.net/rst.html">
+        reStructuredText Docs</a>
+      </div>
+      <div class="concept">
+        <h3>Debugging</h3>
+        <ul>
+          <li>
+            Examine error messages. Often, starting from the bottom makes it easier to understand.
+          </li>
+          <li>
+            Make sure examples and inherited code work properly.
+          </li>
+          <li>
+            Check (print) intermediate results.
+          </li>
+          <li>
+            Keep and compare old versions. You can do this by commenting out code (<code>cmd + /</code> in Atom) or using a version control system like <a href="https://git-scm.com/">git</a>.
+          </li>
+        </ul>
+        <p>
+          <a href="https://www.udacity.com/course/cs259">
+          Software Debugging Course</a>
+        </p>
+      </div>
+
+      <div id="testing" class="concept">
+        <h3>Testing</h3>
+        <p>
+          Use <strong>unit testing</strong> to make sure all your functions work on their own.
+        </p>
+        <pre class="prettyprint">
+# Test each function
+assert function1(args) == answer
+assert function2(args) == answer
+
+for (args, answer) in test_cases:
+    try:
+        result = function(*args)
+        if result != answer:
+        else:
+    except AssertionError:
+        if answer = "AssertionError":
+        else:</pre>
+        <p>
+          Use the following to test <code>program.py</code> from the command line.
+        </p>
+        <pre class="prettyprint">
+python -c "import program; program.test()"</pre>
+      </div>
+    </div>
+
+    <div id="lesson9" class="lesson">
+      <h2>Lesson 9: How to Solve Problems</h2>
+      <div class="concept">
+        <h3>Understanding the Problem</h3>
+        <p>
+          Problem is defined by <em>possible</em> <strong>inputs</strong> (set) and their relation to the desired <strong>outputs</strong>.
+        </p>
+        <p>
+          Solution: <code>input -> procedure -> output</code>
+        </p>
+        <ol>
+          <li>
+            What are the inputs?
+          </li>
+          <ul>
+            <li>
+              What is the set of valid inputs?
+            </li>
+            <li>
+              How are the inputs represented?
+            </li>
+            <li>
+              What are the edge cases?
+            </li>
+          </ul>
+          <li>
+            What are the outputs?
+          </li>
+          <li>
+            Understand the relationship. Work through examples by hand.
+          </li>
+          <li>
+            <strong>Simple mechanical solution</strong>.
+            <ul>
+              <li>
+                Don't optimize prematurely. Simple and correct is more important.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Develop incrementally and <a href="#testing">test</a> as we go.
+          </li>
+        </ol>
+      </div>
+
+      <div class="concept">
+        <h3>Programming Tips</h3>
+        <ul>
+          <li>
+            Build <strong>pseudocode</strong>.
+          </li>
+          <li>
+            Use <strong>stubs</strong> to build helper functions.
+          </li>
+          <li>
+            Account for edge cases.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="Misc" class="lesson">
+      <h2>Misc</h2>
+      <div id="people" class="concept">
+        <h3>People</h3>
+        <ul>
+          <li>
+            Admiral Grace Hopper - Wrote Cobalt and one of the first compilers.
+          </li>
+          <li>
+            Ada Lovelace - Wrote the first computer program
+          </li>
+          <li>
+            Alan Turing - Proved that a simple machine, <em>Turing Machine</em>, could simulate any other machine, using arithmetic, comparisons, procedures, and if statements.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <div class="footer">
+    <p>
+      Credit for a bunch of stuff goes to <a href="https://classroom.udacity.com/nanodegrees/nd000/parts/0001345401/modules/385165862675461/lessons/3851658626239847/concepts/38473885480923">Andy's notes.</a>
+    </p>
+    <p>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+      <img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="Valid CSS!" />
+      </a>
+    </p>
+  </div>
+</body>
+</html>

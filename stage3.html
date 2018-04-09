@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Stage 3 Notes - Buildthatapp's Udacity Intro to Programming Nanodegree</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/highlight.js/9.3.0/styles/default.min.css">
+    <link rel="stylesheet" href="styles/hljs-tomorrow.css">
+    <script src="http://cdn.jsdelivr.net/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <header>
+      <img id="logo" alt="Udacity Logo" src="images/udacity-logo.png">
+    </header>
+    <main role="main">
+      <h1 id="title">Stage 3 Notes</h1>
+      <div id="subtitle">Buildthatapp's Udacity Intro to Programming Nanodegree</div>
+
+      <article class="lesson">
+        <h2>Lesson 1: Functions</h2>
+        <article class="concept">
+          <h3>Abstraction</h3>
+          <p>You are able to use a function by reading the documentation without necessarily understanding how it works under the hood. This is <b>abstraction.</b></p>
+        </article>
+        <article>
+          <h3>Built-in Functions</h3>
+          <p>Commonly used functions are built into the <strong>Pythong Standard Library</strong> and can be called without importing any modules.</p>
+          <p><a href="https://docs.python.org/2/library/functions.html">Built-in Functions</a></p>
+        </article>
+      </article>
+
+      <article class="lesson">
+        <h2>Lesson 2: Classes &amp; Modules</h2>
+        <article class="concept">
+          <h3>Classes</h3>
+          <p>A <strong>class</strong> is a defined set of functions and properties that are applied to each <strong>instance</strong> of the class. <code>brad = turtle.Turtle()</code> is calling the <code>def __init__()</code> function in the <code>class Turtle</code>. This sets aside memory that wasn't taken previously.</p>
+          <p>Classes like <code>random</code>, <code>os</code>, and <code>turtle</code> are a part of the <strong>Python standard library</strong>. External libraries can be imported by calling:</p>
+          <pre><code>sudo easy_install pip
+sudo pip install twilio</code></pre>
+          <pre><code>import twilio
+print twilio.__version__</code></pre>
+        </article>
+        <article class="concept">
+          <h3>Importing Modules</h3>
+          <p>Any Python source file can be used as a module by executng an <strong><code>import</code></strong> statement in some other Python source file.</p>
+          <pre><code>import module1[, module2[,... moduleN]</code></pre>
+          <p>Import specific attributes from a module into the current namespace using <strong><code>from...import</code></strong></p>
+          <pre><code>from modname import name1[, name2[, ... nameN]]</code></pre>
+          <footer>
+            [<cite><a href="http://www.tutorialspoint.com/python/python_modules.htm">tutorialspoint</a></cite>]
+          </footer>
+        </article>
+        <article class="concept">
+          <h3>Misc Vocabulary</h3>
+          <ul>
+            <li>
+              <strong>Constructor</strong> - The initializing function that is caled when an instance is created. In python it is the `__init__` function.
+            </li>
+            <li>
+              <strong>Instance Variable</strong> - Class property set when an object is created, and accessible by calling <code>instance.property</code> It is defined by `self.property` in the `__init__` function.
+            </li>
+            <li>
+              <strong>Instance Method</strong> - Functions that can be called by instances and have `self` as a property. Otherwise, they are just local.
+            </li>
+          </ul>
+        </article>
+      </article>
+
+      <article class="lesson">
+        <h2>Lesson 3: Building Classes</h2>
+        <article class="concept">
+          <h3>Guidelines</h3>
+          <p><a href ="https://google.github.io/styleguide/pyguide.html">Google Styleguide</a></p>
+        </article>
+        <article class="concept">
+          <h3>Class</h3>
+          <pre><code>class Class():
+    def __init__(self, var1[, var2,...[]]):
+        self.var1 = var1</code></pre>
+        </article>
+        <article class="concept">
+          <h3>Class Variables</h3>
+          <p><strong>Class variables</strong> have values that can be accessed by every instance of that class.</p>
+          <p>Constants should be defined with all-caps.</p>
+          <pre><code>CLASS_VARIABLE = [1, 2, 3]</code></pre>
+        </article>
+        <article class="concept">
+          <h3>Predefined Class Attributes</h3>
+          <ul>
+            <li>
+              <strong>__doc__</strong> - The class documentation string.
+            </li>
+            <li>
+              <strong>__name__</strong> - The name of the class.
+            </li>
+            <li>
+              <strong>__module__</strong> - The name of the module in which this class was defined.
+            </li>
+          </ul>
+          <footer>
+            [<a href="http://www2.lib.uchicago.edu/keith/courses/python/class/5/">UChicago</a>]
+          </footer>
+        </article>
+      </article>
+
+      <article class="lesson">
+        <h2>Lesson 4: Advanced Class Concepts</h2>
+        <article class="concept">
+          <h3>Inheritance</h3>
+          <p>A <em>Child</em> class can <strong>inherit</strong> variables and methods from a <em>Parent</em> class.</p>
+          <pre><code>class Parent(object):
+  def __init__(self, argP1, argP2):
+    self.argP1 = argP1
+    self.argP2 = argP2
+
+class Child(Parent):
+  def __init__(self, argP1, argP2, argC1):
+    Parent.__init__(self, argP1, argP2)
+    self.argC1 = argC1
+
+class SuperChild(Parent):
+  def __init__(self, argP1, argP2, argC1):
+    super(SuperChild, self).__init__(argP1, argP2)
+    self.argC1 = argC1</code></pre>
+          <p>Using <code>super().__init__()</code> is a more reliable and forward compatible way of inheriting.</p>
+          <footer>
+            [<a href="http://learnpythonthehardway.org/book/ex42.html">Learn Python the Hard Way</a>]
+          </footer>
+        </article>
+        <article>
+          <h3>Inheritting Methods</h3>
+          <p>Any instance methods in the parent class are available to child classes. The child class can also override an inheritted method by defining a new method with the same name. This is called <strong>method overriding</strong>.</p>
+        </article>
+        <article>
+          <h3>Class and Static Method</h3>
+          <p>A <strong>class method</strong> allows you to call a class within the function. The class should have <code>@classmethod</code>before it, and the first argument in a class method must be a call to the class itself.</p>
+          <p>A <strong>static method</strong> allows you to package related functions that don't need to be called on a class or instance. The class should have <code>@staticmethod</code> before it, and the arguments can be empty.</p>
+          <pre><code>@classmethod
+def get_instances(cls):
+    yield cls.__refs__
+
+@staticmethod
+def get_allowable():
+    return allowable</code></pre>
+        </article>
+      </article>
+    </main>
+  </body>
+</html>
